@@ -2,6 +2,7 @@ const VISUAL_CROSSING_API_KEY = "SS9Y6VJ23PJ46ZFSVAQ7ARBCF";
 const GIPHY_API_KEY = "7Xtr62UwpOXqjueVijtlHHrPHMGf20j6";
 
 function formatWeather(data) {
+  data.currentConditions.fullName = data.resolvedAddress;
   return data.currentConditions;
 }
 
