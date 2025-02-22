@@ -1,13 +1,21 @@
 const VISUAL_CROSSING_API_KEY = "SS9Y6VJ23PJ46ZFSVAQ7ARBCF";
 const GIPHY_API_KEY = "7Xtr62UwpOXqjueVijtlHHrPHMGf20j6";
 
+function formatWeather(data) {
+  return data.currentConditions;
+}
+
 async function getLocatedWeather(location) {
   let data = await fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${VISUAL_CROSSING_API_KEY}&unitGroup=metric`,
     { mode: "cors" },
   );
   data = await data.json();
-  return data.currentConditions;
+  return formatWeather(data);
+}
+
+function formatGif(data) {
+  return data.data.url;
 }
 
 async function getRelatedGif(prompt) {
@@ -16,7 +24,7 @@ async function getRelatedGif(prompt) {
     { mode: "cors" },
   );
   data = await data.json();
-  return data.data.url;
+  return formatGif(data);
 }
 
 export { getLocatedWeather, getRelatedGif };
