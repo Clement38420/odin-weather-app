@@ -1,0 +1,146 @@
+@font-face {
+    font-family: Comfortaa;
+    src: url("assets/fonts/Comfortaa_Regular.ttf");
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url("assets/fonts/Comfortaa_Bold.ttf");
+    font-weight: bold;
+}
+
+:root {
+    --primary: #3674B5;
+    --secondary: #213467;
+    font-family: Comfortaa, sans-serif;
+}
+
+body {
+    background: var(--secondary);
+}
+
+.disabled {
+    visibility: hidden;
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    display: flex;
+    padding: 12px 8px 12px 8px;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.form-container {
+    flex: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#search-form {
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    gap: 16px;
+}
+
+#location-input {
+    background: rgba(40, 90, 136, 0.71);
+    border: none;
+    border-radius: 99999px;
+    padding: 5px 0 5px 10px;
+    color: white;
+}
+
+#location-input::placeholder {
+    color: white;
+}
+
+#location-input:active {
+    border: none;
+}
+
+#location-input:focus {
+    outline: none;
+}
+
+#location-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    width: 0.6em;
+    height: 0.6em;
+    background: url("./assets/images/close.svg") no-repeat 50% 50%;
+    margin: 10px;
+}
+
+#submit-input {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    width: 70px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+}
+
+.content {
+    background: white;
+    padding: 32px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.infos {
+    display: flex;
+    gap: 32px;
+}
+
+.general-infos {
+    display: flex;
+    flex-direction: column;
+}
+
+#city {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#description {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#description::first-letter {
+    text-transform: uppercase;
+}
+
+#temp {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.spacer {
+    height: 4.5em;
+    width: 1px;
+    background: black;
+}
+
+.additional-infos {
+    display: flex;
+    flex-direction: column;
+}
+
+img.gif {
+    align-self: center;
+    transform: scale(0.6);
+    margin: -7%;
+}
