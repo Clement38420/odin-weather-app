@@ -15,7 +15,7 @@ async function getLocatedWeather(location) {
 }
 
 function formatGif(data) {
-  return data.data.url;
+  return data.data.images.original.url;
 }
 
 async function getRelatedGif(prompt) {
